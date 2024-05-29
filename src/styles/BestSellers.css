@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin: 100px 158px;
+}
+
+.best-seller {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.best-seller h4 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+}
+
+.best-seller h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+}
+
+.best-seller p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  width: 1115px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 183px;
+  height: 400px;
+}
+
+.product h5 {
+  width: 131px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  padding-top: 10px;
+  margin: 0;
+  text-align: center;
+  color: black;
+}
+
+.product h4 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  color: #23856d;
+}
+
+.prices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
+.product p {
+  color: black;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.discount {
+  opacity: 0.5;
+}
+
+.btn {
+  width: 261px;
+  height: 52px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  padding: 15px 40px;
+  border: 1px solid #23a6f0;
+  border-radius: 5px;
+  color: #23a6f0;
+  cursor: pointer;
+  margin: 24px;
+}

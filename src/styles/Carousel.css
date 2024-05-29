@@ -1,0 +1,144 @@
+.carousel {
+  padding: 84px 147px;
+  height: 616px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-carousel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 452px;
+  background-image: url("/src/assets/images/card-cover-5.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.right-carousel h2 {
+  padding: 0 24px;
+  margin: 0px;
+}
+
+.right-carousel p {
+  color: #2dc071;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+  padding: 0 24px;
+  padding-top: 24px;
+}
+
+.right-carousel a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+  padding: 0 24px;
+}
+
+.left-carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 616px;
+  width: 680px;
+}
+
+.left-carousel h3 {
+  padding: 0 24px;
+  margin: 0;
+}
+
+.left-carousel p {
+  color: #2dc071;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+  padding: 0 24px;
+  padding-top: 24px;
+}
+
+.left-carousel a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+  padding: 0 24px;
+}
+
+.top-carousel {
+  height: 300px;
+  width: 679px;
+  display: flex;
+  flex-direction: column;
+  background-image: url("/src/assets/images/card-cover-6.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bottom-carousel {
+  display: flex;
+  gap: 15px;
+  height: 300px;
+  width: 679px;
+}
+
+.bottom-carousel-one {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 332px;
+  background-image: url("/src/assets/images/card-cover-6i.png");
+}
+
+.bottom-carousel-two {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 332px;
+  background-image: url("/src/assets/images/card-cover-7.png");
+}
+
+@media screen and (max-width: 700px) {
+  .carousel {
+    padding: 84px 147px;
+    height: auto;
+    width: 333px;
+    flex-direction: column;
+    padding: 41px;
+  }
+
+  .right-carousel {
+    flex-direction: column;
+    height: 300px;
+    width: 332px;
+    padding: 0px;
+  }
+
+  .left-carousel {
+    height: auto;
+    width: 332px;
+  }
+
+  .top-carousel {
+    height: 300px;
+    width: 332px;
+  }
+
+  .bottom-carousel {
+    flex-direction: column;
+    height: auto;
+    width: 332px;
+  }
+  .bottom-carousel-one {
+    height: 300px;
+  }
+  .bottom-carousel-two {
+    height: 300px;
+  }
+}

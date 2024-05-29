@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin: 120px 158px;
+}
+
+.best-seller {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.best-seller h4 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+}
+
+.best-seller h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+}
+
+.best-seller p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+}

@@ -1,0 +1,114 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.top-nav {
+  color: white;
+  background: #23856d;
+  height: 46px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 14px;
+  align-items: "center";
+  justify-content: space-between;
+  padding: 0 38px;
+}
+
+.top-con {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.top-con a {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.follow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-socials {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.down-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 38px;
+  height: 60px;
+}
+
+.logo-div {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: none;
+  color: black;
+  display: flex;
+}
+
+.dropdown {
+  font-size: 25px;
+}
+
+.register {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.register-link {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  text-decoration: none;
+  color: #23a6f0;
+}
+
+.register-link-bg {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  text-decoration: none;
+  color: black;
+}
