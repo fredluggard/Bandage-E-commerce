@@ -22,7 +22,7 @@ function BestSellers() {
     <div className="container">
       <div className="best-seller">
         <h4>Featured Products</h4>
-        <h3>BEST SELLER PRODUCTS</h3>
+        <h3>BESTSELLER PRODUCTS</h3>
         <p>Problems trying to resolve the conflict between </p>
       </div>
 

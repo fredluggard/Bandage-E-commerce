@@ -12,6 +12,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 692px;
+  height: 102px;
 }
 
 .best-seller h4 {
@@ -27,7 +29,7 @@
   font-size: 24px;
   font-weight: 700;
   line-height: 32px;
-  padding: 10px;
+  padding: 0;
   margin: 0;
   text-align: center;
 }
@@ -39,4 +41,118 @@
   padding: 10px;
   margin: 0;
   text-align: center;
+}
+
+.icons {
+  width: 1045px;
+  height: 274px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 80px;
+}
+
+.icon {
+  width: 328px;
+  height: 254px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.icon p {
+  width: 225px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+}
+
+.featured-post {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.featured-post h6 {
+  color: #23a6f0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.featured-post h2 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.room-cards {
+  width: 1050px;
+  height: 994px;
+  margin: 112px 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.room-card {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 348px;
+  height: 606px;
+  padding: 0;
+  margin: 0;
+}
+.room-card img {
+  width: 348px;
+  height: 300px;
+}
+.room-card h6 {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: red;
+  width: 58px;
+  height: 24px;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    margin: 84px 0;
+  }
+
+  .best-seller {
+    height: 102px;
+    width: 332px;
+  }
+
+  .icons {
+    flex-direction: column;
+    width: 328px;
+    height: auto;
+  }
 }

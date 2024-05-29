@@ -116,3 +116,34 @@
   cursor: pointer;
   margin: 24px;
 }
+
+@media screen and (max-width: 700px) {
+  .container {
+    margin: 100px 10px;
+  }
+
+  .best-seller {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .best-seller h4 {
+    display: none;
+  }
+
+  .best-seller h3 {
+    margin: 10px;
+  }
+
+  .best-seller p {
+    width: 261px;
+    height: 40px;
+  }
+
+  .products {
+    flex-direction: column;
+    width: 183px;
+  }
+}
