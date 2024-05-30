@@ -112,3 +112,10 @@
   text-decoration: none;
   color: black;
 }
+
+@media screen and (max-width: 700) {
+  .down-nav {
+    padding: 0 10px;
+    margin: 0;
+  }
+}

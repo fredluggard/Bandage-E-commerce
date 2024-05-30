@@ -5,6 +5,10 @@ import arrow from "../assets/images/icon-cool-icon-125.svg";
 import room from "../assets/images/room.png";
 import kitchen from "../assets/images/kitchen.png";
 import bedroom from "../assets/images/bedroom.png";
+import { CiAlarmOn } from "react-icons/ci";
+import { FaChartArea } from "react-icons/fa";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 function FeaturedPost() {
   return (
@@ -38,7 +42,7 @@ function FeaturedPost() {
         </div>
       </div>
 
-      <div>
+      <div className="feature">
         <div className="featured-post">
           <h6>Practice Advice</h6>
           <h2>Featured Posts</h2>
@@ -48,64 +52,87 @@ function FeaturedPost() {
           <div className="room-card">
             <img src={room} alt="image" />
             <h6>New</h6>
-            <div>
-              <div>
+            <div className="bottom-card">
+              <div className="trends">
                 <p>Google</p>
                 <p>Trending</p>
                 <p>New</p>
               </div>
 
               <h4>Loudest à la Madison #1 (L`integral)</h4>
-              <p>
+              <p className="ps">
                 We focus on ergonomics and meeting you where you work.
                 It`&apos;`s only a keystroke away.
               </p>
-              <div>
-                <span>22 April 2021</span>
-                <span>10 comments</span>
+              <div className="date">
+                <span>
+                  <CiAlarmOn className="alarm" /> 22 April 2021
+                </span>
+                <span>
+                  <FaChartArea className="chart" /> 10 comments
+                </span>
               </div>
+              <Link className="learn" to="#">
+                Learn More <MdKeyboardArrowRight className="arrow-right" />
+              </Link>
             </div>
           </div>
 
           <div className="room-card">
             <img src={kitchen} alt="image" />
-            <div>
-              <div>
+            <h6>New</h6>
+            <div className="bottom-card">
+              <div className="trends">
                 <p>Google</p>
                 <p>Trending</p>
                 <p>New</p>
               </div>
 
               <h4>Loudest à la Madison #1 (L`integral)</h4>
-              <p>
+              <p className="ps">
                 We focus on ergonomics and meeting you where you work.
                 It`&apos;`s only a keystroke away.
               </p>
-              <div>
-                <span>22 April 2021</span>
-                <span>10 comments</span>
+              <div className="date">
+                <span>
+                  <CiAlarmOn className="alarm" /> 22 April 2021
+                </span>
+                <span>
+                  <FaChartArea className="chart" /> 10 comments
+                </span>
               </div>
+              <Link className="learn" to="#">
+                Learn More <MdKeyboardArrowRight className="arrow-right" />
+              </Link>
             </div>
           </div>
 
           <div className="room-card">
             <img src={bedroom} alt="image" />
-            <div>
-              <div>
+            <h6>New</h6>
+            <div className="bottom-card">
+              <div className="trends">
                 <p>Google</p>
                 <p>Trending</p>
                 <p>New</p>
               </div>
 
               <h4>Loudest à la Madison #1 (L`integral)</h4>
-              <p>
+              <p className="ps">
                 We focus on ergonomics and meeting you where you work.
                 It`&apos;`s only a keystroke away.
               </p>
-              <div>
-                <span>22 April 2021</span>
-                <span>10 comments</span>
+              <div className="date">
+                <span>
+                  <CiAlarmOn className="alarm" /> 22 April 2021
+                </span>
+                <span>
+                  <FaChartArea className="chart" /> 10 comments
+                </span>
               </div>
+              <Link className="learn" to="#">
+                Learn More <MdKeyboardArrowRight className="arrow-right" />
+              </Link>
             </div>
           </div>
         </div>

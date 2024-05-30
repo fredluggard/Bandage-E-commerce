@@ -1,0 +1,156 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.cover {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 10px -12px rgba(0, 0, 0, 0.25);
+}
+
+.top {
+  width: 1050px;
+  height: 142px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.top span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.middle {
+  width: 1050px;
+  height: 170px;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: start;
+  padding: 50px 0;
+}
+
+.rows {
+  width: 148px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rows h5,
+.rows1 h5 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.rows a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 0.6;
+}
+
+.rows a:hover {
+  color: #23a6f0;
+  opacity: 1;
+}
+
+.rows1 {
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rows1 form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rows1 form input {
+  width: 321px;
+  height: 52px;
+  background: #e6e6e6;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px 0 0 5px;
+  padding: 10px 15px;
+  opacity: 0.7;
+  outline: none;
+}
+
+.rows1 form button {
+  width: 117px;
+  padding: 30px 15px;
+  background-color: #23a6f0;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 0 5px 5px 0;
+}
+.rows1 p {
+  font-size: 12x;
+  font-weight: 400;
+  line-height: 28x;
+  opacity: 0.7;
+  padding: 0;
+  margin: 0;
+}
+
+.bottom {
+  width: 1050px;
+  height: 44px;
+  text-align: start;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 700px) {
+  .cover {
+    width: 325px;
+    padding: 45px;
+  }
+  .top {
+    min-width: 321px;
+    height: 150px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+  }
+
+  .middle {
+    flex-direction: column;
+
+    width: 321px;
+    height: auto;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: start;
+    padding: 50px 0;
+  }
+  .bottom {
+    width: 195px;
+    text-align: center;
+  }
+}

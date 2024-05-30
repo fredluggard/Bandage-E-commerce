@@ -33,11 +33,11 @@ function BestSellers() {
               <img
                 width={183}
                 height={238}
-                src={product.images}
+                src={product.thumbnail}
                 alt="images"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = product.thumbnail;
+                  e.target.src = product.images;
                 }}
               />
               <h5>{product.title}</h5>

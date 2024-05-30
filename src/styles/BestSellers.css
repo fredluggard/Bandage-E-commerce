@@ -4,7 +4,8 @@
   justify-content: center;
   align-items: center;
   gap: 24px;
-  margin: 100px 158px;
+  margin: 100px 0;
+  width: 100%;
 }
 
 .best-seller {

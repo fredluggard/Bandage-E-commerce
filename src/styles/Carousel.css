@@ -106,11 +106,10 @@
 
 @media screen and (max-width: 700px) {
   .carousel {
-    padding: 84px 147px;
     height: auto;
     width: 333px;
     flex-direction: column;
-    padding: 41px;
+    padding: 41px 10px;
   }
 
   .right-carousel {

@@ -4,7 +4,9 @@
   justify-content: center;
   align-items: center;
   gap: 24px;
-  margin: 120px 158px;
+  margin-top: 120px;
+  height: auto;
+  width: 100%;
 }
 
 .best-seller {
@@ -80,6 +82,14 @@
   text-align: center;
 }
 
+.feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
 .featured-post {
   display: flex;
   flex-direction: column;
@@ -107,8 +117,8 @@
 
 .room-cards {
   width: 1050px;
-  height: 994px;
-  margin: 112px 0;
+  height: auto;
+  margin-top: 112px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -118,6 +128,7 @@
 .room-card {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
   width: 348px;
@@ -131,6 +142,8 @@
 }
 .room-card h6 {
   position: absolute;
+  top: 0;
+  left: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,6 +151,88 @@
   background: red;
   width: 58px;
   height: 24px;
+}
+
+.bottom-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 348px;
+  height: 306px;
+  padding: 20px;
+}
+
+.trends {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.trends p:nth-child(1) {
+  color: #8ec2f2;
+}
+
+.bottom-card h4 {
+  width: 247px;
+  height: 60px;
+  text-align: justify;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+}
+
+.bottom-card .ps {
+  width: 280px;
+  height: 60px;
+  text-align: justify;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.date {
+  width: 298px;
+  height: 46px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+.date span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  opacity: 0.8;
+}
+
+.alarm {
+  color: #23a6f0;
+}
+
+.chart {
+  color: #23856d;
+}
+
+.learn {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.arrow-right {
+  font-size: 25px;
+  color: #23a6f0;
 }
 
 @media screen and (max-width: 700px) {
@@ -154,5 +249,27 @@
     flex-direction: column;
     width: 328px;
     height: auto;
+  }
+
+  .bottom-card {
+    width: 340px;
+    padding: 20px 10px;
+  }
+
+  .featured-post {
+    width: 239px;
+  }
+
+  .featured-post h2 {
+    width: 239px;
+    height: 100px;
+  }
+
+  .room-cards {
+    flex-direction: column;
+    width: auto;
+    height: 1880px;
+    margin: 112px 0;
+    gap: 50px;
   }
 }
