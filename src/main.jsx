@@ -8,10 +8,12 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import productState from "./features/ProductState.jsx";
+import cartSlice from "./features/CartState.jsx";
 
 const store = configureStore({
   reducer: {
     item: productState,
+    cart: cartSlice,
   },
 });
 

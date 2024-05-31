@@ -9,9 +9,15 @@ import { FaRegUser } from "react-icons/fa6";
 import { BsCart } from "react-icons/bs";
 import menuIcon from "../assets/images/vector.png";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 function NavBar() {
   const [widthSize, setWidthSize] = useState(window.innerWidth);
+  const [drop, setDrop] = useState(false);
+  const dropdown = () => {
+    setDrop(!drop);
+  };
+  const cart = useSelector((state) => state.cart.value);
 
   useEffect(() => {
     const handleResize = () => setWidthSize(window.innerWidth);
@@ -83,7 +89,9 @@ function NavBar() {
                 <IoIosSearch />
               </Link>
               <Link className="register-link" to="#">
-                <BsCart />
+                <span>
+                  <BsCart /> <p className="cart-num">{cart.items.length}</p>
+                </span>
               </Link>
               <Link className="register-link" to="#">
                 <IoIosHeartEmpty />
@@ -92,19 +100,101 @@ function NavBar() {
           </div>
         </div>
       ) : (
-        <div className="down-nav">
-          <h1 className="logo">Bandage</h1>
-          <div className="register">
-            <Link className="register-link-bg" to="#">
-              <IoIosSearch />
-            </Link>
-            <Link className="register-link-bg" to="#">
-              <BsCart />
-            </Link>
-            <Link className="register-link-bg" to="#">
-              <img src={menuIcon} alt="menu" />
-            </Link>
+        <div className="cover-div">
+          <div className="down-nav">
+            <h1 className="logo">Bandage</h1>
+            <div className="register">
+              <Link className="register-link-bg" to="#">
+                <IoIosSearch />
+              </Link>
+              <Link className="register-link-bg" to="#">
+                <span>
+                  <BsCart /> <p className="cart-num">{cart.items.length}</p>
+                </span>
+              </Link>
+              <div onClick={dropdown} className="register-link-bg">
+                <img src={menuIcon} alt="menu" />
+              </div>
+            </div>
           </div>
+
+          {drop === true && (
+            <div
+              className="droppedMenu"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                width: "100%",
+                height: "98vh",
+              }}
+            >
+              <nav
+                className="link-nav"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "black",
+                  gap: "50px",
+                }}
+              >
+                <NavLink
+                  className="nav-link"
+                  to="/"
+                  style={{ fontSize: "20px" }}
+                >
+                  Home
+                </NavLink>
+                <NavLink
+                  className="nav-link"
+                  to="/shop"
+                  style={{ fontSize: "20px" }}
+                >
+                  Shop
+                </NavLink>
+                <NavLink
+                  className="nav-link"
+                  to="#"
+                  style={{ fontSize: "20px" }}
+                >
+                  About
+                </NavLink>
+                <NavLink
+                  className="nav-link"
+                  to="#"
+                  style={{ fontSize: "20px" }}
+                >
+                  Blog
+                </NavLink>
+                <NavLink
+                  className="nav-link"
+                  to="#"
+                  style={{ fontSize: "20px" }}
+                >
+                  Contact
+                </NavLink>
+                <NavLink
+                  className="nav-link"
+                  to="#"
+                  style={{ fontSize: "20px" }}
+                >
+                  Pages
+                </NavLink>
+                <Link
+                  className="register-link"
+                  to="#"
+                  style={{ color: "#23a6f0", fontSize: "20px" }}
+                >
+                  <FaRegUser /> Login / Register
+                </Link>
+              </nav>
+            </div>
+          )}
         </div>
       )}
     </div>

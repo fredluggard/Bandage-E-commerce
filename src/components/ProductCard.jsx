@@ -5,9 +5,24 @@ import { BsCart } from "react-icons/bs";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoEye } from "react-icons/io5";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setCart } from "../features/CartState";
+import { useNavigate } from "react-router-dom";
 
 function ProductCard() {
   const product = useSelector((state) => state.item.value);
+  const cart = useSelector((state) => state.cart.value);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const addToCart = (product) => {
+    dispatch(
+      setCart({
+        items: [...cart.items, product],
+      })
+    );
+    navigate("/cart");
+    console.log(cart);
+  };
 
   return (
     <div className="main-product-card">
@@ -39,9 +54,11 @@ function ProductCard() {
               </div>
 
               <div className="selected-option">
-                <button>Select Options</button>
+                <button onClick={addToCart}>Select Options</button>
                 <IoIosHeartEmpty style={{ cursor: "pointer" }} />
-                <BsCart style={{ cursor: "pointer" }} />
+                <span>
+                  <BsCart style={{ cursor: "pointer" }} /> {cart.items.length}
+                </span>
                 <IoEye style={{ color: "black", cursor: "pointer" }} />
               </div>
             </div>
