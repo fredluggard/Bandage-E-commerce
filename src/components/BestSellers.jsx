@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import "../styles/BestSellers.css";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setItem } from "../features/ProductState";
 
 function BestSellers() {
   const [products, setProducts] = useState([]);
   const [count, setCount] = useState(10);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products?limit=${count}`)
@@ -18,6 +20,16 @@ function BestSellers() {
     setCount((prevCount) => prevCount + 5);
   };
 
+  const handleAction = (product) => {
+    dispatch(
+      setItem({
+        title: product.title,
+        image: product.image,
+        price: product.price,
+      })
+    );
+  };
+
   return (
     <div className="container">
       <div className="best-seller">
@@ -28,7 +40,14 @@ function BestSellers() {
 
       <div className="products">
         {products.map((product) => (
-          <Link className="link" to="/shop" key={product.id}>
+          <a
+            onClick={() => {
+              handleAction(product);
+            }}
+            className="link"
+            href="/shop"
+            key={product.id}
+          >
             <div className="product">
               <img
                 width={183}
@@ -47,7 +66,7 @@ function BestSellers() {
                 <h4>${product.price}</h4>
               </span>
             </div>
-          </Link>
+          </a>
         ))}
       </div>
 

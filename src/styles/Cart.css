@@ -1,0 +1,26 @@
+.home-cart {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 34px 38px;
+}
+
+.home-cart a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.arrow-cart {
+  font-size: 20px;
+}
+
+.arrow-cart1 {
+  font-size: 20px;
+  opacity: 0.3;
+}
+
+.home-cart p {
+  opacity: 0.3;
+  font-weight: 500;
+}
