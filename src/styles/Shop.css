@@ -97,4 +97,8 @@
   .brands {
     flex-direction: column;
   }
+
+  .mobile-hide {
+    display: none;
+  }
 }

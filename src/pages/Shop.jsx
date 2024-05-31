@@ -57,7 +57,9 @@ function Shop() {
         <img src={img} alt="Reading desk" />
       </div>
 
-      <BestSellers />
+      <div className="mobile-hide">
+        <BestSellers />
+      </div>
 
       <div className="brands">
         <img src={hoo} alt="hoo" />
