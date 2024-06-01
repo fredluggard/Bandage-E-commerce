@@ -17,7 +17,7 @@ function NavBar() {
   const dropdown = () => {
     setDrop(!drop);
   };
-  const cart = useSelector((state) => state.cart.value);
+  const cart = useSelector((state) => state.cart.items);
 
   useEffect(() => {
     const handleResize = () => setWidthSize(window.innerWidth);
@@ -90,7 +90,7 @@ function NavBar() {
               </Link>
               <Link className="register-link" to="#">
                 <span>
-                  <BsCart /> <p className="cart-num">{cart.items.length}</p>
+                  <BsCart /> <p className="cart-num">{cart.length}</p>
                 </span>
               </Link>
               <Link className="register-link" to="#">
@@ -109,7 +109,7 @@ function NavBar() {
               </Link>
               <Link className="register-link-bg" to="#">
                 <span>
-                  <BsCart /> <p className="cart-num">{cart.items.length}</p>
+                  <BsCart /> <p className="cart-num">{cart.length}</p>
                 </span>
               </Link>
               <div onClick={dropdown} className="register-link-bg">

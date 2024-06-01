@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "../styles/Cart.css";
-import read from "../assets/images/reading.png";
 import payLogo from "../assets/images/payLogo.png";
 import NavBar from "../components/NavBar";
 import { MdKeyboardArrowRight } from "react-icons/md";
@@ -11,7 +10,7 @@ import BestSellers from "../components/BestSellers";
 import { useSelector } from "react-redux";
 
 function Cart() {
-  const product = useSelector((state) => state.item.value);
+  const cart = useSelector((state) => state.cart.items);
   return (
     <div>
       <NavBar />
@@ -33,40 +32,44 @@ function Cart() {
             <p>Price</p>
           </div>
 
-          <div className="cart-item">
-            <div className="cart-item-details">
-              <div className="image-div">
-                <img src={read} alt={product.title} />
-                <h6>
-                  <RiDeleteBin6Line /> REMOVE
-                </h6>
-              </div>
-              <div className="cart-item-title">
-                <h3>Graphic Design </h3>
-                <p>In Stock</p>
-                <span className="cart-star">
-                  <FaStar className="prod-star" />
-                  <FaStar className="prod-star" />
-                  <FaStar className="prod-star" />
-                  <FaStar className="prod-star" />
-                  <FaStar className="prod-star" />
-                  <h6>28 Reviews</h6>
-                </span>
-              </div>
-            </div>
+          <div className="holder">
+            {cart.map((item, index) => (
+              <div className="cart-item" key={index}>
+                <div className="cart-item-details">
+                  <div className="image-div">
+                    <img src={item.image} alt={item.title} />
+                    <h6>
+                      <RiDeleteBin6Line /> REMOVE
+                    </h6>
+                  </div>
+                  <div className="cart-item-title">
+                    <h3>{item.title}</h3>
+                    <p>In Stock</p>
+                    <span className="cart-star">
+                      <FaStar className="prod-star" />
+                      <FaStar className="prod-star" />
+                      <FaStar className="prod-star" />
+                      <FaStar className="prod-star" />
+                      <FaStar className="prod-star" />
+                      <h6>28 Reviews</h6>
+                    </span>
+                  </div>
+                </div>
 
-            <div className="item-counter">
-              <button>-</button>
-              <input type="text" name="num" id="num" />
-              <button style={{ background: "#23a6f0", color: "white" }}>
-                +
-              </button>
-            </div>
+                <div className="item-counter">
+                  <button>-</button>
+                  <input type="text" name="num" id="num" />
+                  <button style={{ background: "#23a6f0", color: "white" }}>
+                    +
+                  </button>
+                </div>
 
-            <div className="item-price">
-              <h4>N3000</h4>
-              <p>N3000 x 1 item(s)</p>
-            </div>
+                <div className="item-price">
+                  <h4>N{item.price}</h4>
+                  <p>{cart.price} x 1 item(s)</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

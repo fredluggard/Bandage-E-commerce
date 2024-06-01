@@ -11,17 +11,23 @@ import { useNavigate } from "react-router-dom";
 
 function ProductCard() {
   const product = useSelector((state) => state.item.value);
-  const cart = useSelector((state) => state.cart.value);
+  const cart = useSelector((state) => state.cart.items);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const addToCart = (product) => {
-    dispatch(
-      setCart({
-        items: [...cart.items, product],
-      })
-    );
-    navigate("/cart");
-    console.log(cart);
+  const addToCart = () => {
+    const isProductInCart = cart.some((item) => item.title === product.title);
+    if (!isProductInCart) {
+      dispatch(
+        setCart({
+          title: product.title,
+          image: product.image,
+          price: product.price,
+        })
+      );
+      navigate("/cart");
+    } else {
+      alert("Product is already in the cart");
+    }
   };
 
   return (
@@ -57,7 +63,7 @@ function ProductCard() {
                 <button onClick={addToCart}>Select Options</button>
                 <IoIosHeartEmpty style={{ cursor: "pointer" }} />
                 <span>
-                  <BsCart style={{ cursor: "pointer" }} /> {cart.items.length}
+                  <BsCart style={{ cursor: "pointer" }} /> {cart.length}
                 </span>
                 <IoEye style={{ color: "black", cursor: "pointer" }} />
               </div>
