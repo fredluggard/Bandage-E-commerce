@@ -7,10 +7,16 @@ import { FaStar } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Footer from "../components/Footer";
 import BestSellers from "../components/BestSellers";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../features/CartState";
 
 function Cart() {
   const cart = useSelector((state) => state.cart.items);
+  const dispatch = useDispatch;
+
+  const itemDelete = (item) => {
+    dispatch(removeFromCart({ item }));
+  };
   return (
     <div>
       <NavBar />
@@ -36,7 +42,7 @@ function Cart() {
             {cart.map((item, index) => (
               <div className="cart-item" key={index}>
                 <div className="cart-item-details">
-                  <div className="image-div">
+                  <div onClick={itemDelete(item.id)} className="image-div">
                     <img src={item.image} alt={item.title} />
                     <h6>
                       <RiDeleteBin6Line /> REMOVE
