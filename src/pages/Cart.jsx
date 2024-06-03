@@ -100,7 +100,7 @@ function Cart() {
                 </div>
 
                 <div className="item-price">
-                  <h4>N{(item.price * item.qty).toFixed(2)}</h4>
+                  <h4>&#x20A6; {(item.price * item.qty).toFixed(2)}</h4>
                   <p>
                     {item.price} x {item.qty} item(s)
                   </p>
