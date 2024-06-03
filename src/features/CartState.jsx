@@ -14,14 +14,9 @@ export const cartSlice = createSlice({
       );
     },
     setQty: (state, action) => {
-      const itemIndex = state.items.findIndex(
-        (item) => item.id === action.payload.id
-      );
-      if (itemIndex !== -1) {
-        state.items[itemIndex].qty = action.payload.qty;
-      } else {
-        state.items.push({ ...action.payload, qty: 1 });
-      }
+      const index = action.payload.index;
+      const newQuantity = action.payload.qty;
+      state.items[index].qty = newQuantity;
     },
   },
 });

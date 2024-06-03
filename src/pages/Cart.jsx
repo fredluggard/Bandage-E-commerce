@@ -14,24 +14,27 @@ function Cart() {
   const cart = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
 
-  const handleIncrement = (item) => {
-    setQty(dispatch(setQty({ ...item, qty: item.qty + 1 })));
+  const handleIncrement = (item, index) => {
+    const qty = item.qty + 1;
+    dispatch(setQty({ index: index, qty: qty }));
   };
 
-  const handleDecrement = (item) => {
+  const handleDecrement = (item, index) => {
     if (item.qty > 1) {
-      dispatch(setQty({ ...item, qty: item.qty - 1 }));
+      const qty = item.qty - 1;
+      dispatch(setQty({ index: index, qty: qty }));
     }
   };
 
-  const itemDelete = (item) => {
-    dispatch(removeFromCart({ index: item }));
+  const itemDelete = (index) => {
+    dispatch(removeFromCart({ index }));
   };
 
   const totalPrice = cart
-    .map((item) => item.price)
+    .map((item) => item.price * item.qty)
     .reduce((a, b) => a + b, 0)
     .toFixed(2);
+
   return (
     <div>
       <NavBar />
@@ -53,10 +56,10 @@ function Cart() {
             <p>Price</p>
           </div>
 
-          <div className="holder" key="holder">
+          <div className="holder">
             {cart.map((item, index) => (
               <div className="cart-item" key={item.id}>
-                <div className="cart-item-details" key={item.id}>
+                <div className="cart-item-details">
                   <div onClick={() => itemDelete(index)} className="image-div">
                     <img src={item.image} alt={item.title} />
                     <h6>
@@ -78,18 +81,18 @@ function Cart() {
                 </div>
 
                 <div className="item-counter">
-                  <button onClick={handleDecrement(item)}>-</button>
+                  <button onClick={() => handleDecrement(item, index)}>
+                    -
+                  </button>
                   <input
                     type="number"
                     name="num"
                     id="num"
                     value={item.qty}
-                    onChange={(e) =>
-                      dispatch(setQty({ ...item, qty: Number(e.target.value) }))
-                    }
+                    readOnly
                   />
                   <button
-                    onClick={handleIncrement(item)}
+                    onClick={() => handleIncrement(item, index)}
                     style={{ background: "#23a6f0", color: "white" }}
                   >
                     +
@@ -97,8 +100,10 @@ function Cart() {
                 </div>
 
                 <div className="item-price">
-                  <h4>N{item.price}</h4>
-                  <p>{cart.price} x 1 item(s)</p>
+                  <h4>N{(item.price * item.qty).toFixed(2)}</h4>
+                  <p>
+                    {item.price} x {item.qty} item(s)
+                  </p>
                 </div>
               </div>
             ))}
