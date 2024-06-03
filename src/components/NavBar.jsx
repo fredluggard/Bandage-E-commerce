@@ -88,7 +88,7 @@ function NavBar() {
               <Link className="register-link" to="#">
                 <IoIosSearch />
               </Link>
-              <Link className="register-link" to="#">
+              <Link className="register-link" to="/cart">
                 <span>
                   <BsCart /> <p className="cart-num">{cart.length}</p>
                 </span>
@@ -107,7 +107,7 @@ function NavBar() {
               <Link className="register-link-bg" to="#">
                 <IoIosSearch />
               </Link>
-              <Link className="register-link-bg" to="#">
+              <Link className="register-link-bg" to="/cart">
                 <span>
                   <BsCart /> <p className="cart-num">{cart.length}</p>
                 </span>

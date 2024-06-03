@@ -129,6 +129,10 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.selected-option a {
+  color: black;
+  text-decoration: none;
+}
 
 @media screen and (max-width: 700px) {
   .product-card {

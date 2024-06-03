@@ -8,15 +8,30 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import Footer from "../components/Footer";
 import BestSellers from "../components/BestSellers";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from "../features/CartState";
+import { removeFromCart, setQty } from "../features/CartState";
 
 function Cart() {
   const cart = useSelector((state) => state.cart.items);
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
+
+  const handleIncrement = (item) => {
+    setQty(dispatch(setQty({ ...item, qty: item.qty + 1 })));
+  };
+
+  const handleDecrement = (item) => {
+    if (item.qty > 1) {
+      dispatch(setQty({ ...item, qty: item.qty - 1 }));
+    }
+  };
 
   const itemDelete = (item) => {
-    dispatch(removeFromCart({ item }));
+    dispatch(removeFromCart({ index: item }));
   };
+
+  const totalPrice = cart
+    .map((item) => item.price)
+    .reduce((a, b) => a + b, 0)
+    .toFixed(2);
   return (
     <div>
       <NavBar />
@@ -38,11 +53,11 @@ function Cart() {
             <p>Price</p>
           </div>
 
-          <div className="holder">
+          <div className="holder" key="holder">
             {cart.map((item, index) => (
-              <div className="cart-item" key={index}>
-                <div className="cart-item-details">
-                  <div onClick={itemDelete(item.id)} className="image-div">
+              <div className="cart-item" key={item.id}>
+                <div className="cart-item-details" key={item.id}>
+                  <div onClick={() => itemDelete(index)} className="image-div">
                     <img src={item.image} alt={item.title} />
                     <h6>
                       <RiDeleteBin6Line /> REMOVE
@@ -63,9 +78,20 @@ function Cart() {
                 </div>
 
                 <div className="item-counter">
-                  <button>-</button>
-                  <input type="text" name="num" id="num" />
-                  <button style={{ background: "#23a6f0", color: "white" }}>
+                  <button onClick={handleDecrement(item)}>-</button>
+                  <input
+                    type="number"
+                    name="num"
+                    id="num"
+                    value={item.qty}
+                    onChange={(e) =>
+                      dispatch(setQty({ ...item, qty: Number(e.target.value) }))
+                    }
+                  />
+                  <button
+                    onClick={handleIncrement(item)}
+                    style={{ background: "#23a6f0", color: "white" }}
+                  >
                     +
                   </button>
                 </div>
@@ -82,7 +108,7 @@ function Cart() {
         <div className="summary">
           <div className="order-div">
             <h4>Order Summary</h4>
-            <p>4 Items</p>
+            <p>{cart.length} Items</p>
           </div>
           <div className="delivery">
             <p>Delivery Charges</p>
@@ -92,11 +118,11 @@ function Cart() {
           </div>
           <div className="sub-total">
             <p>Subtotal</p>
-            <p>N26,500</p>
+            <p>&#x20A6; {totalPrice}</p>
           </div>
           <div className="total">
             <h3>Total</h3>
-            <h3>N26,500</h3>
+            <h3>&#x20A6; {totalPrice}</h3>
           </div>
           <div className="charges">
             <div>

@@ -4,6 +4,7 @@
   align-items: center;
   background-image: url("src/assets/images/ads-bg.png");
   height: 640px;
+  width: 100%;
 }
 
 .content {
