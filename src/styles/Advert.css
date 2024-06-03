@@ -4,6 +4,7 @@
   align-items: center;
   background-image: url("src/assets/images/ads-bg.png");
   height: 640px;
+  width: 100%;
 }
 
 .content {
@@ -57,10 +58,12 @@
 @media screen and (max-width: 700px) {
   .wrapper {
     height: 712px;
+    width: 98%;
     background-position: center;
   }
+
   .content h2 {
-    width: 358px;
+    width: 350px;
   }
 
   .content p {

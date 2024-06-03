@@ -1,10 +1,20 @@
 import { useEffect, useState } from "react";
 import "../styles/BestSellers.css";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setItem } from "../features/ProductState";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function BestSellers() {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [count, setCount] = useState(10);
+  const dispatch = useDispatch();
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products?limit=${count}`)
@@ -18,6 +28,17 @@ function BestSellers() {
     setCount((prevCount) => prevCount + 5);
   };
 
+  const handleAction = (product) => {
+    dispatch(
+      setItem({
+        title: product.title,
+        image: product.images,
+        price: product.price,
+      })
+    );
+    navigate("/shop");
+  };
+
   return (
     <div className="container">
       <div className="best-seller">
@@ -28,7 +49,13 @@ function BestSellers() {
 
       <div className="products">
         {products.map((product) => (
-          <Link className="link" to="/shop" key={product.id}>
+          <button
+            onClick={() => {
+              handleAction(product);
+            }}
+            className="link"
+            key={product.id}
+          >
             <div className="product">
               <img
                 width={183}
@@ -47,7 +74,7 @@ function BestSellers() {
                 <h4>${product.price}</h4>
               </span>
             </div>
-          </Link>
+          </button>
         ))}
       </div>
 
