@@ -25,7 +25,7 @@ function ProductCard() {
           title: product.title,
           image: product.image,
           price: product.price,
-          qty: 0,
+          qty: 1,
         })
       );
       navigate("/cart");
